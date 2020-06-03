@@ -67,13 +67,22 @@ DateTimeWidgets.prototype = {
         $container.find('.form-row .vDateField').each(function () {
             var $dateField = $(this);
             var $dateLink = $dateField.next('.vDateField-link');
-
-            $dateField.datepicker({
+            var changeYear = $dateField.data('change-years');
+            var yearRange = $dateField.data('year-range');
+            var dpOptions = {
                 dateFormat: self.djangoDateTimeFormatToJs(DATE_FORMAT),
                 showButtonPanel: true,
                 nextText: '',
                 prevText: ''
-            });
+            };
+            if (changeYear !== undefined) {
+                dpOptions.changeYear = true;
+            }
+            if (yearRange !== undefined) {
+                dpOptions.yearRange = yearRange;
+            }
+
+            $dateField.datepicker(dpOptions);
 
             $dateLink.on('click', function (e) {
                 if ($dateField.datepicker('widget').is(':visible')) {
