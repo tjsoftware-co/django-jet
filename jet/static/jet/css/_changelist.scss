@@ -88,6 +88,7 @@
 /* TOOLBAR */
 
 #toolbar {
+  margin-bottom: 20px;
   display: none;
 
   @include for-mobile {
@@ -104,8 +105,8 @@
     }
 
     #searchbar {
-      margin-bottom: 2rem;
-      margin-right: 10px;
+      margin-bottom: 5px;
+      margin-right: 2px;
       vertical-align: top;
 
       @include for-mobile {
@@ -143,19 +144,14 @@
 }
 
 .changelist-filter-select {
-  display: block;
-  margin-left: 0.25rem;
-  margin-bottom: 0.3rem;
   &-wrapper {
-    margin-right: 10px;
-    margin-top: -1.45rem;
-    margin-bottom: 2rem;
+    margin-right: 2px;
+    margin-bottom: 5px;
     display: inline-block;
     vertical-align: top;
 
     @include for-mobile {
       margin-right: 5px;
-      margin-left: 0;
     }
 
     @include for-phone {
@@ -163,8 +159,6 @@
     }
 
     .select2 {
-      width: 100% !important;
-      
       @include for-phone {
         width: 100% !important;
       }
@@ -182,12 +176,6 @@
           margin-right: 2px !important;
         }
       }
-    }
-  }
-  &-div {
-    float: left;
-    @include for-phone {
-      width: 100%;
     }
   }
 }
