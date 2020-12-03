@@ -49,25 +49,13 @@ ToolbarUpdater.prototype = {
                         .text($link.text())
                         .attr('data-url', $link.attr('href'))
                         .attr('selected', $item.hasClass('selected'));
-
-                    if (i == 0 ) {
-                        if (filterName != null) {
-                            $option.text(filterName)
-                        }
-
-                        var $separator = $('<option>')
-                            .attr('disabled', true)
-                            .text('---');
-
-                        $option = $option.add($separator);
-                    }
-
                     $select.append($option);
                 });
-
+                var $label = $('<label>').addClass('changelist-filter-select').text(filterName);
+                var $block_div =$('<div>').addClass('changelist-filter-select-div').append($label).append($select);
                 var $wrapper = $('<span>')
                     .addClass('changelist-filter-select-wrapper')
-                    .append($select);
+                    .append($block_div);
 
                 if ($search.length) {
                     $wrapper.insertAfter($search);
